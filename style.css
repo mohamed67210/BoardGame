@@ -9,14 +9,55 @@ body{
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    gap: 2rem;
+    width: 100vw;
+    height: 100vh;
+}
+nav{
+    background-color: #CD74EC;
+    width: 100%;
+    height: 3rem;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #69D69F;
 }
 .formAPI{
     display: flex;
     justify-content: start;
     gap: 0.5rem;
-    background-color: blueviolet;
+    background-color: #CD74EC;
     border-radius: 10px;
     padding: 2rem;
+}
+label{color: #B3E0F2;
+font-weight: bold;}
+input{
+    padding: 0.2rem;
+    border-radius: 5px;
+    color: #332259;
+}
+#btn{
+    background-color: #69D69F;
+    border: none;
+    color: white;
+}
+select{
+    width: 50%;
+    display: none;
+}
+#detail_jeux{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #CD74EC;
+    text-align: center;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    border-radius: 10px;
 }
 #img_container{
     width: 200px;

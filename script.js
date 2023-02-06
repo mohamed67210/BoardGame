@@ -5,12 +5,20 @@ const form = document.querySelector("form")
 let detail_jeux_container = document.querySelector('#detail_jeux')
 let select = document.querySelector('.select')
 let img_container = document.querySelector('#img_container')
+let title = document.querySelector('.title')
+let phrase = document.querySelector('.phrase')
 
 btn.addEventListener("click", (event) => {
     event.preventDefault();
     const inputGame = document.querySelector(".gameName")
     let inputValue = inputGame.value
     getInfosApi(inputValue)
+    img_container.innerHTML = ""
+    title.innerHTML = ""
+    phrase.innerHTML = ""
+    detail_jeux_container.style.display = 'none'
+    select.style.display ="block"
+
 })
 
 function getInfosApi(inputValue) {
@@ -32,6 +40,7 @@ function getInfosApi(inputValue) {
         })
     // quand on selectionne une option dans le select 
     select.addEventListener('change', (event) => {
+        detail_jeux_container.style.display = 'flex'
         event.preventDefault()
         fetch('https://api.boardgameatlas.com/api/search?name=' + select.value + '&client_id=' + id + '')
             .then((Response) => Response.json())
@@ -45,12 +54,12 @@ function getInfosApi(inputValue) {
                 let description = detail_game.description_preview
                 console.log(select.value)
                 // afficher le nom du jeux selectionner dans la balise h1
-                let title = document.querySelector('.title')
+
                 title.innerHTML = detail_game.name
                 // afficher max min joueurs + description dans la balise p
-                let phrase = document.querySelector('.phrase')
+
                 phrase.innerHTML = 'de ' + min_nb_joueurs + ' à ' + max_nb_joueurs + ' Joueurs'
-                phrase.innerHTML += '<br>' + description
+                phrase.innerHTML += '<br><br>' + description
 
                 // afficher image du jeux
                 img_container.innerHTML = "<img src=" + img_link + " alt =''>"

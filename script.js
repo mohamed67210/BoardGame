@@ -58,8 +58,8 @@ function getInfosApi(inputValue) {
                 title.innerHTML = detail_game.name
                 // afficher max min joueurs + description dans la balise p
 
-                phrase.innerHTML = 'de ' + min_nb_joueurs + ' à ' + max_nb_joueurs + ' Joueurs'
-                phrase.innerHTML += '<br><br>' + description
+                phrase.innerHTML = '<span>Joeurs</span> : de ' + min_nb_joueurs + ' à ' + max_nb_joueurs + ' Joueurs'
+                phrase.innerHTML += '<br><br><span>Description</span> :<br>' + description
 
                 // afficher image du jeux
                 img_container.innerHTML = "<img src=" + img_link + " alt =''>"
